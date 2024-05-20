@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ClientController;
+use App\Http\Controllers\BookController;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,3 +30,10 @@ Route::post('clientes/save', [ClientController::class, 'saveClient']);
 /*Actualizar un Cliente*/
 Route::put('clientes/update/{codigo}', [ClientController::class, 'updateClient']);
 
+Route::get('/listado', [BookController::class, 'listBook']);
+/*Busqueda de un Libro*/
+Route::get('/libros/buscar/{codigo}',[ClientController::class, 'findBook']);
+/*Registrar un nuevo Libro*/
+Route::post('libros/save', [ClientController::class, 'saveBook']);
+/*Actualizar un Libro*/
+Route::put('libros/update/{codigo}', [ClientController::class, 'updateBook']);
